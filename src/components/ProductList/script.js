@@ -1,6 +1,6 @@
 import connector from '../../connector'
 import Product from '../Product/index.vue'
-
+import Papa from '../../../node_modules/papaparse'
 export default {
   name: 'ProductList',
   components: {
@@ -8,6 +8,17 @@ export default {
   },
   created() {
     connector.$on('show-product-log', this.showProduct)
+    var url = '/build/static/csv/products1.csv';
+    var vm = this;
+    var parsed = Papa.parse(url, {
+    	download: true,
+      header: true,
+      complete: function(results, file) {
+      	console.log("Parsing complete:", results, file);
+        vm.products = results.data;
+      }
+    });
+
   },
   destroyed() {
     connector.$off('show-product-log', this.showProduct)
@@ -19,11 +30,7 @@ export default {
   },
   data() {
     return {
-      products: [
-        {name:'product 1',image: 'http://lorempixel.com/100/100/nightlife/1'},
-        {name:'product 2',image: 'http://lorempixel.com/100/100/nightlife/2'},
-        {name:'product 3',image: 'http://lorempixel.com/100/100/nightlife/3'}
-      ],
+      products: [],
     }
   }
 }

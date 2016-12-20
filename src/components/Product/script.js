@@ -5,7 +5,7 @@ export default {
   props: ['data'],
   methods: {
     clickAdd(event) {
-      connector.$emit('show-product-log', this.data.name);
+      connector.$emit('show-product-log', this.data.title);
     }
   },
   data() {
