@@ -7,25 +7,22 @@ export default {
     'product': Product,
   },
   created() {
-    connector.$on('show-product-log', this.showProduct)
+    connector.$on('get-products', this.getProducts);
     var url = '/build/static/csv/products1.csv';
-    var vm = this;
     var parsed = Papa.parse(url, {
-    	download: true,
+      download: true,
       header: true,
       complete: function(results, file) {
-      	console.log("Parsing complete:", results, file);
-        vm.products = results.data;
+        connector.$emit('get-products', results.data);
       }
     });
-
   },
   destroyed() {
-    connector.$off('show-product-log', this.showProduct)
+    connector.$off('get-products', this.showProduct)
   },
   methods: {
-    showProduct(name) {
-      console.log('Show Product '+name);
+    getProducts(products) {
+      this.products = products;
     }
   },
   data() {
