@@ -1,5 +1,6 @@
-<li>
+<li v-if="data.Visible==='SI'">
   <h2>{{data.title}}</h2>
   <h3><img :src="data.photo" :alt="data.title" width="100" /></h3>
+  <p>{{data.ref}}</p>
   <button @click="clickAdd">Show Product Log</button>
 </li>
