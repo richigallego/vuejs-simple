@@ -1,0 +1,6 @@
+photo,ref,EAN,Visible,title,title_es,description,description_es,family,subfamily,price,pvp,peso,MADE IN,Color,Unica
+http://placehold.it/250x250/EFEFEF,REF-MUESTRA1,12345678,NO,Product 1,Producto 1,Quality Product 1,Producto de calidad 1,Familia 1,Subfamilia 1,10,25,0.50,China,Blue,100
+http://placehold.it/250x250/CCCCCC,REF-MUESTRA2,12345679,SI,Product 2,Producto 2,Quality Product 2,Producto de calidad 2,Familia 1,Subfamilia 1,11,26,0.60,Japan,Green,150
+http://placehold.it/250x250/444444,REF-MUESTRA3,12345680,NO,Product 3,Producto 3,Quality Product 3,Producto de calidad 3,Familia 1,Subfamilia 2,12,27,0.70,Spain,Red,200
+http://placehold.it/250x250/333333,REF-MUESTRA4,12345681,SI,Product 4,Producto 4,Quality Product 4,Producto de calidad 4,Familia 1,Subfamilia 1,13,28,0.80,China,Blue,250
+http://placehold.it/250x250/111111,REF-MUESTRA5,12345682,SI,Product 5,Producto 5,Quality Product 5,Producto de calidad 5,Familia 1,Subfamilia 2,14,29,0.90,Spain,Red,300

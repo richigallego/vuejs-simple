@@ -9,16 +9,16 @@ export default {
   created() {
     connector.$on('show-product-log', this.logProduct);
     connector.$on('set-products', this.setProducts);
-    var url = '/build/static/csv/products1.csv';
-    this.loadProducts(url);
+    connector.$on('load-products', this.loadProducts);
   },
   destroyed() {
-    connector.$off('set-products', this.showProduct)
+    connector.$off('set-products', this.setProducts)
     connector.$off('show-product-log', this.logProduct)
   },
   methods: {
     loadProducts(url){
-      var parsed = Papa.parse(url, {
+      var path = '/build/static/csv/';
+      var parsed = Papa.parse(path+url, {
         download: true,
         header: true,
         complete: function(results, file) {
