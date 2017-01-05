@@ -1,3 +1,6 @@
+<div v-if="products.length > 0">
+<slot name="header"></slot>
 <ul>
   <product v-for="product in products" :data="product"></product>
 </ul>
+</div>
